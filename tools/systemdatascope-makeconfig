@@ -927,7 +927,7 @@ if len( glob.glob( "df-*" ) ) > 0 or os.path.exists( "memory" ) or os.path.exist
                 skip_free = False
 
             s = StackOrLines( cs, "Storage", part_name, isStack = True, t = "AREA",
-                              extra_command = '--lower-limit 0' )
+                              extra_command = '--lower-limit 0 --rigid' )
 
             for g in sorter( gd + "/*.rrd", "^df-.*/df_complex-(.*).rrd", front = ["used"], end=["free"] ):
                 name = re.search( "^df-.*/df_complex-(.*).rrd", g ).group(1)
